@@ -17,7 +17,7 @@ module ResourceInspector
     res = {}
     resources.each do |r|
       pth = r["full_path"]
-      cur = Chef::Resource::LWRPBase.build_from_file("copy_file", pth, Chef::RunContext.new(Chef::Node.new, nil, nil))
+      cur = Chef::Resource::LWRPBase.build_from_file(name, pth, Chef::RunContext.new(Chef::Node.new, nil, nil))
       data = {}
       data[:description] = cur.description
       data[:actions] = cur.actions
